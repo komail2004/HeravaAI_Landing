@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Herava AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #fdf8f2;
+      color: #111;
+      line-height: 1.6;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+    }
+    nav a {
+      margin-left: 30px;
+      color: #222;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #1a73e8;
+    }
+    .hero {
+      padding: 100px 40px 60px;
+      background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+      color: #fff;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .cta {
+      background: #1a73e8;
+      padding: 15px 30px;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 20px;
+    }
+    .cta:hover {
+      background: #125ac4;
+    }
+    .features, .demo, .build {
+      padding: 60px 40px;
+      background: #fdf8f2;
+    }
+    .features h2, .demo h2, .build h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .feature-item {
+      flex: 1 1 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+    .feature-item:hover {
+      transform: translateY(-5px);
+    }
+    .chatbot-demo {
+      margin-top: 30px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .chatbot-demo label {
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+    }
+    .chatbot-demo input {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 12px;
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+    .chatbot-demo #chat {
+      margin-top: 20px;
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 10px;
+      min-height: 120px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .chat-bubble {
+      margin: 10px 0;
+      padding: 12px 15px;
+      background: #e3eaf8;
+      border-radius: 12px;
+      max-width: 90%;
+    }
+    .chat-bubble.user {
+      background: #d1ffe6;
+      text-align: right;
+      margin-left: auto;
+    }
+    .chat-bubble.bot {
+      background: #f0f0f0;
+      text-align: left;
+      margin-right: auto;
+    }
+    .loading {
+      text-align: center;
+      font-style: italic;
+      color: #888;
+    }
+    .instruction {
+      text-align: center;
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #eee;
+      font-size: 14px;
+      color: #666;
+    }
+    form {
+      max-width: 600px;
+      margin: 20px auto 0;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    form input, form textarea {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+    form button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Herava AI</h2>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#demo">Demo</a>
+      <a href="#build">Build with Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Smarter Automation for SMBs</h1>
+    <p>Herava AI builds tailored GPT-powered solutions to solve real problems — from customer questions to workflow automation.</p>
+    <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Contact Us</button>
+  </section>
+
+  <section class="features" id="features">
+    <h2>What We Offer</h2>
+    <div class="feature-list">
+      <div class="feature-item">GPT-based support chatbots that sound like you</div>
+      <div class="feature-item">Automated email and document summarization</div>
+      <div class="feature-item">Workflow automation: CRM, lead gen, and more</div>
+      <div class="feature-item">Custom APIs and seamless system integrations</div>
+    </div>
+  </section>
+
+  <section class="demo" id="demo">
+    <h2>Try It Live</h2>
+    <p class="instruction">Here you can see how Herava AI chatbots can respond using your company name and service. Optionally, add your website URL to enhance answers with real content.</p>
+    <div class="chatbot-demo">
+      <label for="company">Company Name:</label>
+      <input type="text" id="company" placeholder="e.g. Swift Clothing Co." />
+      <label for="service">Service Offered:</label>
+      <input type="text" id="service" placeholder="e.g. custom t-shirts" />
+      <label for="website">Company Website (optional):</label>
+      <input type="text" id="website" placeholder="e.g. https://swiftclothing.com" />
+      <label for="userMessage">Your Message:</label>
+      <input type="text" id="userMessage" placeholder="e.g. Do you ship internationally?" />
+      <button class="cta" onclick="sendToGPT()">Ask</button>
+      <div id="chat"></div>
+    </div>
+  </section>
+
+  <section class="build" id="build">
+    <h2>Build with Us</h2>
+    <div class="feature-list">
+      <div class="feature-item">Automate support for a clothing store</div>
+      <div class="feature-item">Auto-generate weekly sales reports</div>
+      <div class="feature-item">Summarize client intake forms in seconds</div>
+    </div>
+  </section>
+
+  <section class="features" id="contact">
+    <h2>Let’s Talk</h2>
+    <p class="instruction">We’re currently offering early-access builds with full customization and onboarding. Reach out to see what we can do for your business.</p>
+    <form action="mailto:mkomail2004@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button class="cta" type="submit">Send Email</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Herava AI. All rights reserved.
+  </footer>
+
+  <script>
+    async function sendToGPT() {
+      const company = document.getElementById("company").value;
+      const service = document.getElementById("service").value;
+      const website = document.getElementById("website").value;
+      const userMessage = document.getElementById("userMessage").value;
+      const chat = document.getElementById("chat");
+
+      if (!company || !service || !userMessage) {
+        chat.innerHTML += `<div class='chat-bubble bot'>Please fill in all required fields.</div>`;
+        return;
+      }
+
+      chat.innerHTML += `<div class='chat-bubble user'>${userMessage}</div>`;
+      chat.innerHTML += `<div class='chat-bubble bot loading'>Typing...</div>`;
+
+      const bubbles = chat.querySelectorAll(".chat-bubble");
+      const loader = bubbles[bubbles.length - 1];
+
+      try {
+        const res = await fetch("http://localhost:3000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ company, service, userMessage, website })
+        });
+
+        const data = await res.json();
+        loader.remove();
+        chat.innerHTML += `<div class='chat-bubble bot'>${data.reply}</div>`;
+        chat.scrollTop = chat.scrollHeight;
+      } catch (err) {
+        loader.remove();
+        chat.innerHTML += `<div class='chat-bubble bot'>Something went wrong. Please try again later.</div>`;
+      }
+    }
+  </script>
+</body>
+</html>
