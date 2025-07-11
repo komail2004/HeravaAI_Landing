@@ -49,8 +49,6 @@ Use the following website info if useful: ${websiteText}`;
     console.error(error.message);
     res.status(500).json({ reply: 'An error occurred. Please try again later.' });
   }
-  "scripts": {
-  "start": "node server.js"
 }
 
 });
