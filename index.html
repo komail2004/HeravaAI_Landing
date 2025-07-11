@@ -270,7 +270,7 @@
       const loader = bubbles[bubbles.length - 1];
 
       try {
-        const res = await fetch("https://heravaai-landing.onrender.com", {
+        const res = await fetch("https://heravaai-landing.onrender.com/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ company, service, userMessage, website })
