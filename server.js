@@ -45,12 +45,11 @@ Use the following website info if useful: ${websiteText}`;
     });
 
     res.json({ reply: completion.choices[0].message.content });
+
   } catch (error) {
     console.error(error.message);
     res.status(500).json({ reply: 'An error occurred. Please try again later.' });
   }
-}
-
 });
 
 app.listen(3000, () => console.log('✅ Server running at http://localhost:3000'));
